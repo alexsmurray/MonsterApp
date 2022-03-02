@@ -1,0 +1,15 @@
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\bin\Debug\net6.0\MonsterTest.exe
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\bin\Debug\net6.0\MonsterTest.deps.json
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\bin\Debug\net6.0\MonsterTest.runtimeconfig.json
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\bin\Debug\net6.0\MonsterTest.dll
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\bin\Debug\net6.0\ref\MonsterTest.dll
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\bin\Debug\net6.0\MonsterTest.pdb
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.csproj.AssemblyReference.cache
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.AssemblyInfoInputs.cache
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.AssemblyInfo.cs
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.csproj.CoreCompileInputs.cache
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.dll
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\ref\MonsterTest.dll
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.pdb
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.genruntimeconfig.cache
