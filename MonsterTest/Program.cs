@@ -7,44 +7,19 @@ namespace MonsterTest
 {
     internal class Program
     {
+        
         static void Main(string[] args)
         {
-            string heroName;
-            Console.WriteLine("Please enter your name.");
-            heroName = Convert.ToString(Console.ReadLine());
+            Hero hero = new Hero();
 
-            do
+            if (GetHeroName(hero))
             {
-
-                Console.WriteLine($"Hello, {heroName}. Please select a class.");
-                Console.WriteLine("\t1 - Warrior");
-                Console.WriteLine("\t2 - Rogue");
-                Console.WriteLine("\t3 - Mage");
-                Console.WriteLine("\t4 - Ranger");
-
-
-
-                switch (Console.ReadLine())
+                Console.WriteLine($"Hello, {hero.HeroName}. Please select a class.");
+                if (GetArchetype(hero))
                 {
-                    case "1":
-                        Console.WriteLine("Your class is Warrior.");
-                        break;
-                    case "2":
-                        Console.WriteLine("Your class is Rogue.");
-                        break;
-                    case "3":
-                        Console.WriteLine("Your class is Mage.");
-                        break;
-                    case "4":
-                        Console.WriteLine("Your class is Ranger.");
-                        break;
-                    default:
-                        Console.WriteLine("Invalid response. Please enter 1, 2, 3, or 4.");
-                        break;
-
+                    Console.WriteLine($"Your class is {hero.Archetype}.");
                 }
-            }while (true);
-
+            }
 
             /*
             // generates a random number
@@ -99,6 +74,60 @@ namespace MonsterTest
             var attack = rand.Next(0, 10);
             Console.WriteLine($"You deal {attack} damage. {fighters[n].hit_points - attack} hp remaining.");
            */
+        }
+
+        static bool GetHeroName(Hero hero)
+        {
+            var nameisnotvalid = true;
+            do
+            {
+                Console.WriteLine("Please enter your name.");
+                hero.HeroName = Console.ReadLine();
+
+                // validate heorName
+                if (!string.IsNullOrWhiteSpace(hero.HeroName))
+                {
+                    nameisnotvalid = false;
+                }
+
+            } while (nameisnotvalid);
+
+            return true;
+        }
+
+        static bool GetArchetype(Hero hero)
+        {
+            do
+            {
+                Console.WriteLine("\t1 - Warrior");
+                Console.WriteLine("\t2 - Rogue");
+                Console.WriteLine("\t3 - Mage");
+                Console.WriteLine("\t4 - Ranger");
+
+
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        
+                        hero.Archetype = "Warrior";
+                        return true;
+                    case "2":
+                        hero.Archetype = "Rogue";
+                        return true;
+                    case "3":
+                        hero.Archetype = "Mage";
+                        return true;
+                    case "4":
+                        hero.Archetype = "Ranger";
+                        return true;
+                    default:
+                        Console.WriteLine("Invalid response. Please enter 1, 2, 3, or 4.");
+                        break;
+
+                }
+
+
+            } while (true);
         }
     }
 }
