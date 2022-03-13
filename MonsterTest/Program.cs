@@ -10,18 +10,14 @@ namespace MonsterTest
         
         static void Main(string[] args)
         {
-            Hero hero = new Hero();
+            Hero hero = GetArchetype();
 
-            if (GetHeroName(hero))
-            {
-                Console.WriteLine($"Hello, {hero.HeroName}. Please select a class.");
-                if (GetArchetype(hero))
-                {
-                    Console.WriteLine($"Your class is {hero.Archetype}.");
-                }
-            }
+           GetHeroName(hero);
+            Console.WriteLine(hero.heroName);
+            Console.WriteLine(hero.archetype);
+            Console.WriteLine(hero.healthPoints);
+            Console.WriteLine(hero.basicAttack);
 
-            /*
             // generates a random number
             var rand = new Random((int)DateTime.Now.TimeOfDay.TotalMilliseconds);
 
@@ -73,8 +69,9 @@ namespace MonsterTest
 
             var attack = rand.Next(0, 10);
             Console.WriteLine($"You deal {attack} damage. {fighters[n].hit_points - attack} hp remaining.");
-           */
+
         }
+
 
         static bool GetHeroName(Hero hero)
         {
@@ -82,10 +79,10 @@ namespace MonsterTest
             do
             {
                 Console.WriteLine("Please enter your name.");
-                hero.HeroName = Console.ReadLine();
+                hero.heroName = Console.ReadLine();
 
-                // validate heorName
-                if (!string.IsNullOrWhiteSpace(hero.HeroName))
+                // validate heroName
+                if (!string.IsNullOrWhiteSpace(hero.heroName))
                 {
                     nameisnotvalid = false;
                 }
@@ -95,10 +92,11 @@ namespace MonsterTest
             return true;
         }
 
-        static bool GetArchetype(Hero hero)
+        static Hero GetArchetype()
         {
             do
             {
+                Console.WriteLine($"Hello, please select a class.");
                 Console.WriteLine("\t1 - Warrior");
                 Console.WriteLine("\t2 - Rogue");
                 Console.WriteLine("\t3 - Mage");
@@ -108,18 +106,13 @@ namespace MonsterTest
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        
-                        hero.Archetype = "Warrior";
-                        return true;
+                       return new Warrior();
                     case "2":
-                        hero.Archetype = "Rogue";
-                        return true;
+                        return new Rogue();
                     case "3":
-                        hero.Archetype = "Mage";
-                        return true;
+                        return new Mage();
                     case "4":
-                        hero.Archetype = "Ranger";
-                        return true;
+                        return new Ranger();
                     default:
                         Console.WriteLine("Invalid response. Please enter 1, 2, 3, or 4.");
                         break;
@@ -129,5 +122,6 @@ namespace MonsterTest
 
             } while (true);
         }
+        
     }
 }
