@@ -10,8 +10,10 @@ namespace MonsterTest
     {
         public string heroName { get; set; }
         public string archetype { get; set; }
+        public int maxHealthPoints { get; set; }
         public int healthPoints { get; set; }
         public int basicAttack { get; set; }
+        public string abilityName { get; set; }
         public int ability { get; set; }
     }
 
@@ -21,11 +23,15 @@ namespace MonsterTest
         {
             archetype = "Warrior";
 
-            healthPoints = 100;
+            maxHealthPoints = 200;
 
-            basicAttack = 12;
+            healthPoints = 200;
 
-            ability = 20;
+            basicAttack = 20;
+
+            abilityName = "Whirlwind";
+
+            ability = 40;
 
         }
 
@@ -37,11 +43,15 @@ namespace MonsterTest
         {
             archetype = "Rogue";
 
-            healthPoints = 60;
+            maxHealthPoints = 160;
 
-            basicAttack = 10;
+            healthPoints = 160;
 
-            ability = 30;
+            basicAttack = 20;
+
+            abilityName = "Backstab";
+
+            ability = 50;
         }
 
     }
@@ -52,11 +62,15 @@ namespace MonsterTest
         {
             archetype = "Mage";
 
-            healthPoints = 45;
+            maxHealthPoints = 145;
 
-            basicAttack = 20;
+            healthPoints = 145;
 
-            ability = 50;
+            basicAttack = 15;
+
+            abilityName = "Fireball";
+
+            ability = 60;
         }
     }
 
@@ -67,11 +81,15 @@ namespace MonsterTest
 
             archetype = "Ranger";
 
-            healthPoints = 75;
+            maxHealthPoints = 175;
 
-            basicAttack = 11;
+            healthPoints = 175;
 
-            ability = 25;
+            basicAttack = 25;
+
+            abilityName = "Volley";
+
+            ability = 30;
 
         }
     }
