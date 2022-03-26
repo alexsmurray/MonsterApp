@@ -14,7 +14,7 @@ namespace MonsterTest
         public List<Monster> results { get; set; }
     }
 
-    internal class Monster
+    internal class Monster : ICloneable
     {
         public string name { get; set; }
         public int armor_class { get; set; }
@@ -63,6 +63,17 @@ namespace MonsterTest
         public int AttackDamage
         {
             get { return _attackDamage[challenge_rating]; }
+        }
+
+        public object Clone()
+        {
+            return new Monster
+            {
+                name = this.name,
+                armor_class = this.armor_class,
+                hit_points = this.hit_points,
+                challenge_rating = this.challenge_rating
+            };
         }
     }
 }
