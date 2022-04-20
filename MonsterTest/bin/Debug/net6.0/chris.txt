@@ -1,0 +1,1 @@
+{"heroType":"MonsterTest.Mage","playerName":"chris","playerClass":"Mage","playerHealth":114,"challengeIndex":2,"monsterName":"Preta"}

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VBLfAk0I7RUNaMBQTJa/CDzWak4F8tzUjU3xur5uGJb8KUDc4xh7Ih//XJm9HO4YHko71FFeuwaD5rBzvtfQwQ==",
+  "dgSpecHash": "VLHlJh0SvlkwiTnkx4oMfVAC7JVH6e8809AXK64nP5wGkJXdM4B7ZKEKSS5KfDbKS0Bq8pGEcvap9Gdd1dmmyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gurgl\\VisualStudio2022\\MonsterApp\\MonsterTest\\MonsterTest\\MonsterTest.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Gurgl\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

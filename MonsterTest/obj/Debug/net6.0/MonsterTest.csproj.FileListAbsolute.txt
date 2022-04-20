@@ -13,3 +13,5 @@ C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net
 C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\ref\MonsterTest.dll
 C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.pdb
 C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.genruntimeconfig.cache
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Gurgl\VisualStudio2022\MonsterApp\MonsterTest\MonsterTest\obj\Debug\net6.0\MonsterTest.csproj.CopyComplete

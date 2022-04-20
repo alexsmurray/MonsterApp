@@ -17,6 +17,8 @@ namespace MonsterTest
 
         public CombatResult Combat(Hero hero, Monster fighter)
         {
+            var potionCount = 1;
+
             while (fighter.hit_points > 0 && hero.healthPoints > 0)
             {
                 Console.WriteLine("What would you like to do?");
@@ -25,6 +27,7 @@ namespace MonsterTest
                 Console.WriteLine("\t3 - Health Potion");
                 Console.WriteLine("\t4 - Quit Game");
 
+                
 
                 switch (Console.ReadLine())
                 {
@@ -46,14 +49,23 @@ namespace MonsterTest
                             break;
                         }
 
+
                     case "3":
                         {
                             var potion = hero.maxHealthPoints / 2;
+                            if (potionCount > 0)
+                            { 
                             hero.healthPoints = Math.Min(hero.maxHealthPoints, hero.healthPoints + potion);
+                            potionCount--;
+                            } else
+                            {
+                                Console.WriteLine("You are out of health potions.");
+                            }
 
                             Console.WriteLine($"You heal for {potion} health. You have {hero.healthPoints} hp remaining.");
                             break;
-                        }
+                        } 
+               
 
                     case "4":
                         {
@@ -75,9 +87,14 @@ namespace MonsterTest
 
             }
 
-            if (hero.healthPoints <= 0) return CombatResult.monsterWins;
-            else return CombatResult.playerWins;
-
+            if (hero.healthPoints <= 0)
+            {
+                return CombatResult.monsterWins;
+            }
+            else
+            {
+                return CombatResult.playerWins;
+            }
         }
     }
 }

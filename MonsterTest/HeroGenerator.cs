@@ -26,26 +26,19 @@ namespace MonsterTest
         private string GetHeroName(Hero hero)
         {
             var name = string.Empty;
-            var nameisnotvalid = true;
-            do
+            
+            while (string.IsNullOrWhiteSpace(name))
             {
                 Console.WriteLine("Please enter your name.");
                 name = Console.ReadLine();
-
-                // validate heroName
-                if (!string.IsNullOrWhiteSpace(name))
-                {
-                    nameisnotvalid = false;
-                }
-
-            } while (nameisnotvalid);
+            }
 
             return name;
         }
 
         private Hero GetArchetype()
         {
-            do
+            while (true)
             {
                 Console.WriteLine($"Hello, please select a class.");
                 Console.WriteLine("\t1 - Warrior");
@@ -71,9 +64,12 @@ namespace MonsterTest
                         }
 
                 }
-
-
-            } while (true);
+            }
         }
+
+
+
+
+          
     }
 }

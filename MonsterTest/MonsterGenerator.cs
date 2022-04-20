@@ -24,6 +24,11 @@ namespace MonsterTest
             return (Monster)fighters[n].Clone();
         }
 
+        public Monster GetMonsterByName(string name)
+        {
+            return (from m in monsters where m.name == name select m).FirstOrDefault();
+        }
+
         public void GetMonsters()
         {
             // api list for monsters
