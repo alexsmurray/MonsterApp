@@ -17,14 +17,30 @@ namespace MonsterTest
 
         public CombatResult Combat(Hero hero, Monster fighter)
         {
-            var potionCount = 1;
+            var potionCount = 3;
+            var cooldown = 0;
+            string abilityCooldown;
+
+           
 
             while (fighter.hit_points > 0 && hero.healthPoints > 0)
             {
+
+                if (cooldown == 0)
+                {
+                    abilityCooldown = "Ready to use.";
+
+                }
+                else
+                {
+                    abilityCooldown = $"Ready in {cooldown--} rounds.";
+                }
+
+
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine("\t1 - Basic Attack");
-                Console.WriteLine($"\t2 - {hero.abilityName}");
-                Console.WriteLine("\t3 - Health Potion");
+                Console.WriteLine($"\t2 - {hero.abilityName} ({abilityCooldown})");
+                Console.WriteLine($"\t3 - Health Potion ({potionCount} remaining.)");
                 Console.WriteLine("\t4 - Quit Game");
 
                 
@@ -43,9 +59,18 @@ namespace MonsterTest
                     case "2":
                         {
                             var ability = rand.Next(1, hero.ability);
-                            fighter.hit_points -= ability;
 
-                            Console.WriteLine($"You deal {ability} damage with {hero.abilityName}. {fighter.hit_points} hp remaining.");
+                            if (cooldown == 0)
+                            {
+                                fighter.hit_points -= ability;
+                                Console.WriteLine($"You deal {ability} damage with {hero.abilityName}. {fighter.hit_points} hp remaining.");
+                                cooldown = 2;
+
+                            }else
+                            {
+                                Console.WriteLine($"Your {hero.abilityName} is on a {cooldown} round cooldown.");
+                                  
+                            }
                             break;
                         }
 
@@ -53,16 +78,19 @@ namespace MonsterTest
                     case "3":
                         {
                             var potion = hero.maxHealthPoints / 2;
+
                             if (potionCount > 0)
                             { 
-                            hero.healthPoints = Math.Min(hero.maxHealthPoints, hero.healthPoints + potion);
-                            potionCount--;
+                                hero.healthPoints = Math.Min(hero.maxHealthPoints, hero.healthPoints + potion);
+                                Console.WriteLine($"You heal for {potion} health. You have {hero.healthPoints} hp remaining.");
+                                potionCount--;
+
                             } else
                             {
                                 Console.WriteLine("You are out of health potions.");
+                                Console.WriteLine($"You have {hero.healthPoints} hp remaining.");
                             }
 
-                            Console.WriteLine($"You heal for {potion} health. You have {hero.healthPoints} hp remaining.");
                             break;
                         } 
                

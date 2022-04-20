@@ -1,1 +1,1 @@
-{"heroType":"MonsterTest.Warrior","playerName":"Alex","playerClass":"Warrior","playerHealth":165,"challengeIndex":2,"monsterName":"Nightmare"}
+{"heroType":"MonsterTest.Warrior","playerName":"Alex","playerClass":"Warrior","playerHealth":181,"challengeIndex":4,"monsterName":"Sand Hag"}
