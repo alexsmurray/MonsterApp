@@ -16,8 +16,9 @@ namespace MonsterTest
 
             Console.Clear();
             Console.WriteLine($"Hello, {hero.heroName} the {hero.archetype}.");
-            Console.WriteLine($"You have { hero.maxHealthPoints} health and deal up to { hero.basicAttack} basic damage.");
-            Console.WriteLine($"You have an ability called {hero.abilityName} that can deal up to {hero.ability} damage.");
+            Console.WriteLine($"You have { hero.maxHealthPoints} health and can deal up to { hero.basicAttack} basic attack damage.");
+            Console.WriteLine($"You have an ability called {hero.abilityName} that can deal up to {hero.ability} damage and has a 2 round cooldown between uses.");
+            Console.WriteLine("You have 3 health potions to use per encounter that will heal you for half of your maximum health.");
 
             return hero;
         }
@@ -40,7 +41,7 @@ namespace MonsterTest
         {
             while (true)
             {
-                Console.WriteLine($"Hello, please select a class.");
+                Console.WriteLine($"Please select your class.");
                 Console.WriteLine("\t1 - Warrior");
                 Console.WriteLine("\t2 - Rogue");
                 Console.WriteLine("\t3 - Mage");

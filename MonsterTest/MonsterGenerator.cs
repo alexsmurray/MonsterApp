@@ -65,7 +65,7 @@ namespace MonsterTest
             }
 
             //displays total number of monsters in api
-            Console.WriteLine($"Found {monsters.Count} monsters");
+            //Console.WriteLine($"Found {monsters.Count} monsters");
         }
     }
 }

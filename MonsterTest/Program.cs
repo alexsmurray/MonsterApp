@@ -25,23 +25,26 @@ namespace MonsterTest
                 {
                     case "1":
                         {
+                            Console.Clear();
+                            Console.WriteLine("Your village is under attack by strange monsters and beings! \n You hear cries for help in the distance and see houses burning. \n You quickly collect yourself and grab your things to help. \n ");
+
                             HeroGenerator generator = new HeroGenerator();
                             hero = generator.GenerateHero();
                             break;
                         }
                     case "2":
-                        Console.WriteLine("Name?");
+                        Console.WriteLine("What is the mame of the character you wish to load?");
                         var name = Console.ReadLine();
                         try
                         {
-                            var save = ReadHeroFromFile(name);
-                            hero = LoadSave(save);
+                            var save = GameSaver.ReadHeroFromFile(name);
+                            hero = GameSaver.LoadSave(save);
                             startingMonster = save.monsterName;
                             startingChallenge = save.challengeIndex;
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("Failed to load file");
+                            Console.WriteLine("Failed to load file. Your game either does not exist yet or the name you entered was incorrect.");
                         }
                         break;
                     default:
@@ -91,10 +94,10 @@ namespace MonsterTest
                 }
                 else if (result == CombatResult.playerQuits)
                 {
-                    SaveFile save = AddSave(hero, i, fighter);
-                    WriteHeroToFile(save);
-                    
-                    Console.WriteLine("Quitting the game.");
+                    SaveFile save = GameSaver.AddSave(hero, i, fighter);
+                    GameSaver.WriteHeroToFile(save);
+
+                    Console.WriteLine("Quitting the game. Please press enter.");
                     break;
                 }
 
@@ -102,59 +105,16 @@ namespace MonsterTest
                 Console.ReadLine();
                 Console.Clear();
                 Console.WriteLine($"{hero.heroName} has {hero.healthPoints} health remaining.");
-            }
 
-           
-
-            Console.ReadLine();
-        }
-
-        public static SaveFile AddSave(Hero hero, int challengeIndex, Monster fighter)
-        {
-            SaveFile saveFile = new SaveFile()
-            {
-                heroType = hero.GetType().FullName,
-                playerName = hero.heroName,
-                playerClass = hero.archetype,
-                playerHealth = hero.healthPoints,
-                challengeIndex = challengeIndex,
-                monsterName = fighter.name
-            };
-            return saveFile;
-        }
-        public static Hero LoadSave(SaveFile save)
-        {
-            Hero hero = null;
-
-            var heroType = System.Reflection.Assembly.GetExecutingAssembly()?.GetType(save.heroType);
-
-            if (heroType != null)
-            {
-                hero = Activator.CreateInstance(heroType) as Hero;
-                if (hero != null)
+                if (i >= 4)
                 {
-                    hero.heroName = save.playerName;
-                    hero.archetype = save.playerClass;
-                    hero.healthPoints = save.playerHealth;
+                    Console.Clear();
+                    Console.WriteLine($"Congratulations, {hero.heroName} the {hero.archetype}! \n You have successfully fought off all the monsters! \n Your village has been saved, and the villagers celebrate your name in victory! \n All is well, for now... \n The End.");
+                    break;
                 }
             }
 
-            return hero;
+            Console.ReadLine();
         }
-
-        public static void WriteHeroToFile(SaveFile saveFile)
-        {
-            string heroAsString = JsonConvert.SerializeObject(saveFile);
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + $"{saveFile.playerName}.txt", heroAsString);
-            Console.WriteLine("Saving player data.");
-        }
-
-        public static SaveFile? ReadHeroFromFile(string playerName)
-        {
-            string json = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + $"{playerName}.txt");
-            return JsonConvert.DeserializeObject<SaveFile>(json);
-        }
-
-
     }
 }

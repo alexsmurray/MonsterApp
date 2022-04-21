@@ -52,7 +52,7 @@ namespace MonsterTest
                             var attack = rand.Next(1, hero.basicAttack);
                             fighter.hit_points -= attack;
 
-                            Console.WriteLine($"You deal {attack} basic attack damage. {fighter.name} has {fighter.hit_points} hp remaining.");
+                            Console.WriteLine($"You deal {attack} basic attack damage. {fighter} has {fighter.hit_points} hp remaining.");
                             break;
                         }
 
@@ -110,7 +110,7 @@ namespace MonsterTest
 
                 var damage = rand.Next(fighter.AttackDamage);
                 hero.healthPoints -= damage;
-                Console.WriteLine($"{fighter.name} deals {damage} damage to you. You have {hero.healthPoints} hp remaining.");
+                Console.WriteLine($"{fighter} deals {damage} damage to you. You have {hero.healthPoints} hp remaining.");
 
 
             }

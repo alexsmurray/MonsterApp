@@ -59,7 +59,7 @@ namespace MonsterTest
             { "30", 68 }
 
         };
-        
+
         public int AttackDamage
         {
             get { return _attackDamage[challenge_rating]; }
@@ -74,6 +74,11 @@ namespace MonsterTest
                 hit_points = this.hit_points,
                 challenge_rating = this.challenge_rating
             };
+        }
+
+        public override string ToString()
+        {
+            return $"{name}({challenge_rating})";
         }
     }
 }
